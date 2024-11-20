@@ -35,6 +35,12 @@ const start = () => {
   for (let i = 0; i <bars.length; i++) {
     const bar = document.createElement('div')
     bar.style.width = `${bars[i].width}px`;
-    
+    bar.style.height = `${bars[i].height}px`;
+    bar.style.left = `${5 + i * 30}px`;
+    bars[i] = {...bars[i], position: i}
+    bar.classList.add('bar');
+    barsDiv.push(bar);
+    stage.appendChild(bar)
   }
 }
+
