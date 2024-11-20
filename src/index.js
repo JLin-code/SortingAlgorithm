@@ -20,7 +20,7 @@ let barsDiv = []
 const sortingAlgorithms = new SortingAlgorithms({ })
 
 const start = () => {
-  stage. innerHTML = '';
+  stage.innerHTML = '';
 
   bars = Array(nBars).fill(0).map(_ => {
     return{
