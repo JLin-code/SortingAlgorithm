@@ -1,17 +1,40 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { sleep } from './helpers/util.js';
+import { SortingAlgorithms } from './helpers/sortingAlgorithms.js';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+let nBars = 10
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+let numberBars = document.getElementById('numberBars');
+
+const statge = documents.getElementById('stage');
+
+stage.style.width = `${nBars * 30}px`;
+
+const selectAlgorithm = document.getElementById('selectAlgorithm');
+
+const generateBtn = document.getElementById('generateBtn');
+const solveBtn = document.getElementById('solveBtn');
+
+let bars = []
+let barsDiv = []
+
+const sortingAlgorithms = new SortingAlgorithms({ })
+
+const start = () => {
+  stage. innerHTML = '';
+
+  bars = Array(nBars).fill(0).map(_ => {
+    return{
+      width: 20,
+      height: Math.floor(Math.random() * 200) + 1
+    }
+  })
+
+
+  barsDivs = []
+
+  for (let i = 0; i <bars.length; i++) {
+    const bar = document.createElement('div')
+    bar.style.width = `${bars[i].width}px`;
+    
+  }
+}

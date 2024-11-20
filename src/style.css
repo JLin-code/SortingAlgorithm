@@ -117,5 +117,8 @@ button:hover {
     padding: 2px;
     border: none;
     outline: none;
-    
+    border-radius: 5px;
+}
+.selection-algorithm select option{
+    padding: 30px;
 }
