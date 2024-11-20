@@ -79,7 +79,7 @@ const solve = async () => {
 }
 
 generateBtn.addEventListener('click', () => {
-  nBars = parseInt(numberBars.ariaValueMax, 10);
+  nBars = parseInt(numberBars.value, 10);
   stage.style.width = `${nBars * 30}px`;
   start()
 })

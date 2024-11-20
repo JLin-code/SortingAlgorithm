@@ -35,6 +35,7 @@ const partititon = (array, left, right, compareFn) => {
             j--
         }
     }
+    return i
 }
 
 const quick = (array, compareFn = defaultCompare) => {
@@ -72,7 +73,6 @@ class SortingAlgorithms {
                 }
             }
         }
-
         return swaps;
     }
 
@@ -90,7 +90,6 @@ class SortingAlgorithms {
             array[i] = temp
             swaps.push({firstPosition: i, lastPosition: min})
         }
-
         return swaps
     }
 
@@ -100,6 +99,7 @@ class SortingAlgorithms {
         return swaps
     }
 }
+
 export {
     SortingAlgorithms
 }
