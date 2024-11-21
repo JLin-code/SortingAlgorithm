@@ -12,7 +12,7 @@ const defaultCompare = (a, b) => {
 
 let swaps = []
 
-const partititon = (array, left, right, compareFn) => {
+const partition = (array, left, right, compareFn) => {
     const pivot = array[Math.floor((right + left) / 2)]
 
     let i = left
@@ -67,7 +67,7 @@ class SortingAlgorithms {
                 if(array[j] > array[j + 1]) {
                     //Swap the elements if condition = true
                     let temp = array[j];
-                    aray[j] = array[j + 1];
+                    array[j] = array[j + 1];
                     array[j + 1] = temp;
                     swaps.push({firstPosition: j,  lastPostion: j + 1})
                 }
