@@ -1,11 +1,23 @@
 import { sleep } from './helpers/util.js';
-import { SortingAlgorithms } from './helpers/sortingAlgorithms.js';
+import { SortingAlgorithms } from './helpers/SortingAlgorithms.js';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import './index.css'; // Optional: Your styles for the page
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root') // Ensure there's a div with id "root" in index.html
+);
+
 
 let nBars = 10
 
 let numberBars = document.getElementById('numberBars');
 
-const statge = documents.getElementById('stage');
+const stage = document.getElementById('stage');
 
 stage.style.width = `${nBars * 30}px`;
 
@@ -15,7 +27,7 @@ const generateBtn = document.getElementById('generateBtn');
 const solveBtn = document.getElementById('solveBtn');
 
 let bars = []
-let barsDiv = []
+let barsDivs = []
 
 const sortingAlgorithms = new SortingAlgorithms({ })
 
@@ -39,7 +51,7 @@ const start = () => {
     bar.style.left = `${5 + i * 30}px`;
     bars[i] = {...bars[i], position: i}
     bar.classList.add('bar');
-    barsDiv.push(bar);
+    barsDivs.push(bar);
     stage.appendChild(bar)
   }
 }
@@ -48,12 +60,14 @@ start()
 
 async function swapBars(barsDivs, i, j) {
   barsDivs[i].style.left = `${5 + j * 30}px`
-  barsDive[i].classList.add('activate')
+  barsDivs[i].classList.add('activate')
   barsDivs[j].style.left = `${5 + i * 30}px`
-  barsDive[j].classList.add('activate')
+  barsDivs[j].classList.add('activate')
   await sleep(300)
   bars.Divs[i].classList.remove('activate')
   barsDivs[j].classList.remove('activate')
+
+  // Swap bars in the array
   let temp = barsDivs[i]
   barsDivs[i] = barsDivs[j]
   barsDivs[j] = temp
@@ -68,7 +82,7 @@ const algorithms = [
 const solve = async () => {
   const algorithm = structuredClone(bars.map(el => el.height));
 
-  const swaps = algorithms[selectAlgorithm.selectedIndex](array);
+  const swaps = await algorithms[selectAlgorithm.selectedIndex](algorithm);
 
   for (let i = 0; i < swaps.length; i++) {
     if(swaps[i].firstPosition === swaps[i].lastPosition) {
@@ -84,6 +98,6 @@ generateBtn.addEventListener('click', () => {
   start()
 })
 
-solveBtn,addEventListener('click', () => {
+solveBtn.addEventListener('click', () => {
   solve()
 })
