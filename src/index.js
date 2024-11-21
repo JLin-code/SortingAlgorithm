@@ -26,8 +26,8 @@ const selectAlgorithm = document.getElementById('selectAlgorithm');
 const generateBtn = document.getElementById('generateBtn');
 const solveBtn = document.getElementById('solveBtn');
 
-let bars = []
-let barsDivs = []
+let bars = [];
+let barsDivs = [];
 
 const sortingAlgorithms = new SortingAlgorithms({ })
 
@@ -37,20 +37,19 @@ const start = () => {
   bars = Array(nBars).fill(0).map(_ => {
     return{
       width: 20,
-      height: Math.floor(Math.random() * 200) + 1
-    }
-  })
+      height: Math.floor(Math.random() * 200) + 1,
+    };
+  });
 
-
-  barsDivs = []
+  barsDivs = [];
 
   for (let i = 0; i <bars.length; i++) {
-    const bar = document.createElement('div')
+    const bar = document.createElement('div');
     bar.style.width = `${bars[i].width}px`;
     bar.style.height = `${bars[i].height}px`;
     bar.style.left = `${5 + i * 30}px`;
-    bars[i] = {...bars[i], position: i}
     bar.classList.add('bar');
+    bars[i] = {...bars[i], position: i}
     barsDivs.push(bar);
     stage.appendChild(bar)
   }
