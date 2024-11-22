@@ -23,15 +23,15 @@ body{
   border-radius: 5px;
   padding: 10px;
   align-items: center;
-  width: 300px;
-  height: 200px;
+  width: 275px;
+  height: 300px;
   background: #BDDDFC;
 }
 
 #stage {
   display: flex;
   position: relative;
-  height: 500px;
+  height: 400px;
   width: 600px;
   background: #BDDDFC;
   padding: 10px;
@@ -41,7 +41,7 @@ body{
 
 .bar{
   position: absolute;
-  background: #0000;
+  background: #cd5c5c;
   transition: all 300ms ease-out;
   border-radius: 6px;
 }

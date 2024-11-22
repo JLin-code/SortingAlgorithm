@@ -38,11 +38,11 @@ const partition = (array, left, right, compareFn) => {
     return i
 }
 
-const quick = (array, compareFn = defaultCompare) => {
+const quick = (array, left = 0, right =array.length, compareFn = defaultCompare) => {
     let index
 
     if(array.length > 1) {
-        index = partititon(array, left, right, compareFn)
+        index = partition(array, left, right, compareFn)
         if(left < index - 1) {
             quick(array, left, index - 1, compareFn)
         }
@@ -53,9 +53,7 @@ const quick = (array, compareFn = defaultCompare) => {
     return array
 }
 class SortingAlgorithms {
-    constructor({swapBars}) {
-        this.swapBars = swapBars;
-    }
+    
     bubbleSort(array) {
         const swaps = []
         for(let i = 0; i < array.length; i++) {
@@ -79,7 +77,7 @@ class SortingAlgorithms {
     selectionSort(array) {
         const swaps = []
         for(let i = 0; i < array.length - 1; i++) {
-            min = i
+            let min = i
             for(let j = i + 1; j < array.length; j++) {
                 if(array[j] < array[min]) {
                     min = j

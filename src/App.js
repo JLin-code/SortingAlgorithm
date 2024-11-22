@@ -3,14 +3,14 @@ import { SortingAlgorithms } from './helpers/SortingAlgorithms.js';
 import { sleep } from './helpers/util.js';
 
 const App = () => {
-  const [nBars, setNBars] = useState(10);
   const [bars, setBars] = useState([]);
+  const [nBars, setNBars] = useState(10);
   const [swaps, setSwaps] = useState([]);
 
   const sortingAlgorithms = new SortingAlgorithms();
 
-  const generateBars = () => {
-    const newBars = Array(nBars).fill(0).map(() => ({
+  const generateBars = (n) => {
+    const newBars = Array(n).fill(0).map(() => ({
       width: 20,
       height: Math.floor(Math.random() * 200) + 1
     }));

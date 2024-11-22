@@ -1,16 +1,7 @@
 import { sleep } from './helpers/util.js';
 import { SortingAlgorithms } from './helpers/SortingAlgorithms.js';
-import React from 'react';
-import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css'; // Optional: Your styles for the page
-
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root') // Ensure there's a div with id "root" in index.html
-);
 
 
 let nBars = 10
@@ -18,7 +9,6 @@ let nBars = 10
 let numberBars = document.getElementById('numberBars');
 
 const stage = document.getElementById('stage');
-
 stage.style.width = `${nBars * 30}px`;
 
 const selectAlgorithm = document.getElementById('selectAlgorithm');
@@ -37,7 +27,7 @@ const start = () => {
   bars = Array(nBars).fill(0).map(_ => {
     return{
       width: 20,
-      height: Math.floor(Math.random() * 200) + 1,
+      height: Math.floor(Math.random() * 200) + 1
     };
   });
 
@@ -50,8 +40,9 @@ const start = () => {
     bar.style.left = `${5 + i * 30}px`;
     bar.classList.add('bar');
     bars[i] = {...bars[i], position: i}
+    bar.classList.add('bar');
     barsDivs.push(bar);
-    stage.appendChild(bar)
+    stage.appendChild(bar);
   }
 }
 
